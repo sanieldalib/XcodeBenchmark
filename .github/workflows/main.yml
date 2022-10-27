@@ -1,0 +1,14 @@
+on: [workflow_dispatch]
+
+name: Build Xcode Benchmark
+jobs:
+  xcode-benchmark-gala:
+    runs-on: [self-hosted, macos, gala]
+    name: Test iOS App
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Test
+        run: |
+          ls
+          sh benchmark.sh
